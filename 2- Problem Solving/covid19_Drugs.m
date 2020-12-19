@@ -3,7 +3,7 @@ function [Results, solution, ts, S1s, S2s, E1s, E2s, I1s, I2s, R1s, R2s, N1s, N2
 
 
 toms t;
-p=tomPhase('p', t, 0, T, Nset,[],'gauss'); %'gauss' 'cheb' or 'fem1s' or 'fem1'
+p=tomPhase('p', t, 0, T, Nset,[],'fem1s'); %'gauss' 'cheb' or 'fem1s' or 'fem1'
 setPhase(p);
 tomStates S1 E1 I1 R1 S2 E2 I2 R2 N1 N2 D1 D2
 tomControls uD1 uD2
