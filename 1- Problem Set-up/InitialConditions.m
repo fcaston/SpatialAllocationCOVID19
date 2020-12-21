@@ -19,7 +19,7 @@ tspan=linspace(t0,tf,100);%[t0 tf];
 
 
 
-[t,y]=ode15s(@(t,x)COVIDeqsInitialConditions(x, beta11, gamma, sigma, phi,omega), tspan, x0,[]);
+[t,y]=ode15s(@(t,x)COVIDeqsInitialConditions(x, beta11, gamma, sigma, phi), tspan, x0,[]);
 
 if true
     
@@ -43,7 +43,7 @@ IC_1=[y(end,1)./N,y(end,2)./N,y(end,3)./N,y(end,4)./N]
 t0=0; tf=9-0.2301370*1; %tf=4+0.2301370*0; for when uncontrolled R0 is 3.15
 tspan=linspace(t0,tf,100);%[t0 tf];
 
-[t,y]=ode15s(@(t,x)COVIDeqsInitialConditions(x, beta11, gamma, sigma, phi,omega), tspan, x0,[]);
+[t,y]=ode15s(@(t,x)COVIDeqsInitialConditions(x, beta11, gamma, sigma, phi), tspan, x0,[]);
 
 
 if true
@@ -73,14 +73,14 @@ IC_2=[y(end,1)./N,y(end,2)./N,y(end,3)./N,y(end,4)./N]
 
 
         
-        function dx=COVIDeqsInitialConditions(x, beta11, gamma, sigma, phi, omega)
+        function dx=COVIDeqsInitialConditions(x, beta11, gamma, sigma, phi)
         dx = zeros(4,1);
         n1 = x(1)+x(2)+x(3)+x(4); 
 
-        dx(1) = omega.*x(4) - beta11.*x(1).*(x(3)./n1); %S1  - beta12.*x(1).*(x(7)./n2)
+        dx(1) =  - beta11.*x(1).*(x(3)./n1); %S1  - beta12.*x(1).*(x(7)./n2)
         dx(2) = beta11.*x(1).*(x(3)./n1)  - sigma.*x(2)  ; %E1 dot + beta12.*x(1).*(x(7)./n2)       
         dx(3) = sigma.*x(2) - gamma.*x(3) - phi.*x(3)  ; %I1 dot %- phi.*x(3) 
-        dx(4) = gamma.*x(3) - omega.*x(4) ; %R1 dot    
+        dx(4) = gamma.*x(3) ; %R1 dot    
  
         end
     
