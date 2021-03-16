@@ -64,7 +64,7 @@ end
 %%%%%%%%%%%%%%%%   Figures to see effect of TR   %%%%%%%%%%%%%%%%%%%%%%%%%  
 
 %Figure A1: Drug deviation to see effect of TR with permanent immunity
-if true
+if false
 
 bl=[0, 0.4470, 0.7410];
 re=[0.8500, 0.3250, 0.0980];
@@ -144,7 +144,7 @@ load WorkspacePN_Gauss.mat
 end
 
 %Figure 3: Drug deviation to see effect of TR with 6-mo. immunity
-if true
+if false
 
 bl=[0, 0.4470, 0.7410];
 re=[0.8500, 0.3250, 0.0980];
@@ -224,7 +224,7 @@ end
 %%%%%%%%%%%%%%%%   Figures to see effect of Immunity   %%%%%%%%%%%%%%%%%%%%  
 
 %Figure 2: Drug deviation to see effect immunity with TR
-if true
+if false
 
 bl=[0, 0.4470, 0.7410];
 re=[0.8500, 0.3250, 0.0980];
@@ -298,7 +298,7 @@ load WorkspaceST_Gauss.mat
 end
 
 %Figure A7: Drug deviation to see effect immunity with no TR
-if true
+if false
 bl=[0, 0.4470, 0.7410];
 re=[0.8500, 0.3250, 0.0980];
     
@@ -373,7 +373,7 @@ load WorkspaceSN_Gauss.mat
 end
 
 %Figure A6: Drug deviation to see effect immunity with no TR 5%
-if true
+if false
 bl=[0, 0.4470, 0.7410];
 re=[0.8500, 0.3250, 0.0980];
     
@@ -451,7 +451,7 @@ end
 %%%%%%%%%%%%%%%%   Figures to see effect of Constraint   %%%%%%%%%%%%%%%%%%  
 
  %Figure A2: Drug deviation to see effect of Constraint with TR and permanent immunity
-if true
+if false
 
 bl=[0, 0.4470, 0.7410];
 re=[0.8500, 0.3250, 0.0980];
@@ -546,7 +546,7 @@ set(legend1,...
 end
 
  %Figure A3: Drug deviation to see effect of Constraint with no TR and permanent immunity
-if true
+if false
 bl=[0, 0.4470, 0.7410];
 re=[0.8500, 0.3250, 0.0980];
     
@@ -641,7 +641,7 @@ set(legend1,...
 end
 
  %Figure A4: Drug deviation to see effect of Constraint with TR and 6-mo. immunity
-if true
+if false
     
 bl=[0, 0.4470, 0.7410];
 re=[0.8500, 0.3250, 0.0980];
@@ -737,7 +737,7 @@ set(legend1,...
 end
 
  %Figure A5: Drug deviation to see effect of Constraint with no TR and 6-mo. immunity
-if true
+if false
 
 bl=[0, 0.4470, 0.7410];
 re=[0.8500, 0.3250, 0.0980];
@@ -871,7 +871,7 @@ load WorkspacePT_Gauss.mat
     p4=plot(ts,I2s10_ah,'LineWidth',3,'Color',re,'LineStyle',':');hold on
     ylabel({'Prop. of','Infected'}, 'FontSize', 16); 
     xlim([0 ts(scarcePS_V10)])
-    ylim([0 .03])
+    ylim([0 .09])
      title({'(C)'})
       legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Ad Hoc~~~','State 2: Optimal~~~','State 2: Ad Hoc'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
 set(legend1,...
@@ -912,7 +912,7 @@ load WorkspacePN_Gauss.mat
     
    % sgtitle({'Optimal and Ad Hoc Vaccine Allocation with','Corresponding Infection Levels for When Immunity',' Is Permanent and Treatment Capacity Is 10%'},'Color','Black', 'FontSize', 18);  
     
-    saveas(gcf,'DeviationVaccine_EffectOfSIP.png'); hold off
+   % saveas(gcf,'DeviationVaccine_EffectOfSIP.png'); hold off
     
     
       
@@ -1559,6 +1559,64 @@ load WorkspaceSN_Gauss.mat
     
     
     
+end 
+
+
+%%%%% TEST
+
+ %Figure A16: Panel E only
+if true
+
+bl=[0, 0.4470, 0.7410];
+re=[0.8500, 0.3250, 0.0980];
+
+    
+    
+fig= figure
+
+ts=ts05;
+
+load WorkspacePT_Gauss.mat
+
+    
+ 
+
+    %subplot(1,3,2)
+    p1=plot(ts,I1s10,'LineWidth',3,'Color',bl);hold on
+    p2=plot(ts,I2s10,'LineWidth',3,'Color',re);hold on
+    p3=plot(ts,I1s10_ah,'LineWidth',3,'Color',bl,'LineStyle',':');hold on 
+    p4=plot(ts,I2s10_ah,'LineWidth',3,'Color',re,'LineStyle',':');hold on
+    %ylabel({'Prop. of','Recovered'}, 'FontSize', 16); 
+    xlim([0 ts(scarcePS_V10)])
+    ylim([0 .031])
+    title({'Permanent Immunity, Compliance to Travel Restrictions and 10% Vaccine Capacity'}) 
+    %title({'(E)'}) 
+    %legend1=legend([p1 p3 p2 p4],{'State 1: Optimal','State 1: Ad Hoc','State 2: Optimal','State 2: Ad Hoc'},'Interpreter','latex','Orientation','vertical','Location','southeast');
+
+     ylabel({'Prop. of','Infected'}, 'FontSize', 16); 
+     xlabel({'Time (months)'}, 'FontSize', 16); 
+legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Ad Hoc~~~','State 2: Optimal~~~','State 2: Ad Hoc'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
+set(legend1,...
+     'Orientation','vertical',...
+     'Interpreter','latex');
+     %'Position','northeast',...
+    
+    %'Position',[0.106626425988088 0.493992323950414 0.811608069283622 0.0352380951245623],...
+
+     
+ 
+    
+    han=axes(fig,'visible','off'); 
+    han.Title.Visible='on';
+    han.XLabel.Visible='on';
+    han.YLabel.Visible='on';
+    xlabel(han,'Time (months)', 'FontSize', 16);
+        
+ %   sgtitle({'Optimal and Ad Hoc Vaccine Allocation with','Corresponding Infection Levels for when Immunity Is Permanent','and There Is Compliance to a Shelter-in-Place Order'},'Color','Black', 'FontSize', 18);  
+    
+   saveas(gcf,'DeviationVaccine_EffectOfCons_withPermAndSIP_PanelE.png'); hold off
+
+      
 end 
 
  
