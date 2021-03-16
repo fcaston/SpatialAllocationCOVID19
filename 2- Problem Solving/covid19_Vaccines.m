@@ -1,5 +1,5 @@
 function [Results, solution, ts, S1s, S2s, E1s, E2s, I1s, I2s, R1s, R2s, N1s, N2s, uV1s, uV2s, V1s, V2s] = ...
-    covid19_Vaccines(T,r,Nset,x0ic,cI,w,omega,beta11,beta22,beta12,beta21,sigma,gamma,phi,qD,qV,cD,cV,cAdj,ODE,CASE,MaxTreat,SCAR,OBJ,GUESS);
+    covid19_Vaccines(T,r,Nset,x0ic,cI,w,omega,beta11,beta22,beta12,beta21,sigma,gamma,phi1,phi2,qV,cV,cAdj,ODE,CASE,MaxTreat,SCAR,OBJ,GUESS);
 
 
 toms t;
@@ -24,14 +24,14 @@ if ODE==1 % Compliance to Shelter-in-Place order
 ode = collocate({
     dot(S1) == omega.*R1 - beta11.*S1.*(I1./N1) - qV.*uV1 ; %S1 dot
     dot(E1) == beta11.*S1.*(I1./N1) - sigma.*E1 ; %E1 dot
-    dot(I1) == sigma.*E1 - gamma.*I1 -  phi.*I1 ; %I1 dot
+    dot(I1) == sigma.*E1 - gamma.*I1 -  phi1.*I1 ; %I1 dot
     dot(R1) == qV.*uV1 + gamma.*I1 - omega.*R1 ; %R1 dot
     dot(S2) == omega.*R2 - beta22.*S2.*(I2./N2) - qV.*uV2 ; %S2 dot
     dot(E2) == beta22.*S2.*(I2./N2) - sigma.*E2 ; %E2 dot
-    dot(I2) == sigma.*E2 - gamma.*I2 -  phi.*I2 ; %I2 dot
+    dot(I2) == sigma.*E2 - gamma.*I2 -  phi2.*I2 ; %I2 dot
     dot(R2) == qV.*uV2  + gamma.*I2 - omega.*R2 ; %R2 dot
-    dot(N1) == -phi.*I1 ;
-    dot(N2) == -phi.*I2 ;
+    dot(N1) == -phi1.*I1 ;
+    dot(N2) == -phi2.*I2 ;
     dot(V1) ==  uV1 ;
     dot(V2) ==  uV2 ;});    
     
@@ -42,14 +42,14 @@ if ODE==2 % No Compliance to SIP order(Cross contamination)
     ode = collocate({
     dot(S1) == omega.*R1 - beta11.*S1.*(I1./N1) - beta12.*S1.*(I2./N2) - qV.*uV1 ; %S1 dot
     dot(E1) == beta11.*S1.*(I1./N1) +  beta12.*S1.*(I2./N2) - sigma.*E1 ; %E1 dot
-    dot(I1) == sigma.*E1 - gamma.*I1 -  phi.*I1 ; %I1 dot
+    dot(I1) == sigma.*E1 - gamma.*I1 -  phi1.*I1 ; %I1 dot
     dot(R1) == qV.*uV1 + gamma.*I1 - omega.*R1 ; %R1 dot
     dot(S2) == omega.*R2 - beta22.*S2.*(I2./N2) - beta21.*S2.*(I1./N1) - qV.*uV2 ; %S2 dot
     dot(E2) == beta22.*S2.*(I2./N2) +  beta21.*S2.*(I1./N1) - sigma.*E2 ; %E2 dot
-    dot(I2) == sigma.*E2 - gamma.*I2 -  phi.*I2 ; %I2 dot
+    dot(I2) == sigma.*E2 - gamma.*I2 -  phi2.*I2 ; %I2 dot
     dot(R2) == qV.*uV2  + gamma.*I2 - omega.*R2 ; %R2 dot
-    dot(N1) == -phi.*I1 ;
-    dot(N2) == -phi.*I2 ;
+    dot(N1) == -phi1.*I1 ;
+    dot(N2) == -phi2.*I2 ;
     dot(V1) ==  uV1 ;
     dot(V2) ==  uV2 });    
     
@@ -91,9 +91,22 @@ if OBJ==1 %Cost minimization with Policy Adjustment cost
  %Policy adjustment cost 
   adj= cAdj.*((N2./(N1+N2)).*uV1 - (N1./(N1+N2)).*uV2).^2 ;   
   
-  objective = integrate(exp(-r.*t).*((phi+w).*cI.*(I1+I2) + cV.*(uV1+uV2) + adj ));
+
+  objective = integrate(exp(-r.*t).*((phi1+w).*cI.*I1 + (phi2+w).*cI.*I2 + cV.*(uV1+uV2) + adj ));
  
 end
+
+if OBJ==2
+    
+     %Policy adjustment cost 
+  adj= cAdj.*((N2./(N1+N2)).*uV1 - (N1./(N1+N2)).*uV2).^2 ;   
+  
+
+  objective = integrate(exp(-r.*t).*((phi1+w).*cI.*I1 + cV.*(uV1) + adj ));
+    
+    
+end
+
 
 
 % Giving a name to each problem to the solver

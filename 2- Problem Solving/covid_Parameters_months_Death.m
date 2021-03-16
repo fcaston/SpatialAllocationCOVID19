@@ -1,4 +1,4 @@
-function [N1,N2,omega,beta11,beta22,beta12,beta21,sigma,gamma,phi1,phi2,qV,r,cV,cAdj,cI,w,params,R0] = covid_Parameters_months()
+function [N1,N2,omega,beta11,beta22,beta12,beta21,sigma,gamma,phi1,phi2,qV,r,cV,cAdj,cI,w,params,R0] = covid_Parameters_months_Death()
 
 % Population size
 params.N1=1e+0;
@@ -14,7 +14,7 @@ params.omega=1/6; % 6-month immunity (Edridge et al., 2020)
 params.w= 0.133; %Disability weight associated with covid-19 (Nurchis et al., 2020)
 
 
-params.phi1 =params.gamma./(1/0.0178 -1); % Based on a 0.0178 case fatality rate (Abdollahi et al., 2020), using the fact that phi/(phi+gamma) = 0.0178
+params.phi1 =params.gamma./(1/0.0278 -1); % Based on a 0.0178 case fatality rate (Abdollahi et al., 2020), using the fact that phi/(phi+gamma) = 0.0178
 params.phi2 =params.gamma./(1/0.0178 -1); % Based on a 0.0178 case fatality rate (Abdollahi et al., 2020), using the fact that phi/(phi+gamma) = 0.0178
 
 

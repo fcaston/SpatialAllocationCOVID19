@@ -1,7 +1,7 @@
 clear all; close all
 
 %Calling parameter values
-[N1,N2,omega,beta11,beta22,beta12,beta21,sigma,gamma,phi,qD,qV,r,cD,cV,cAdj,cI,w,params,R0] = covid_Parameters_months()
+[N1,N2,omega,beta11,beta22,beta12,beta21,sigma,gamma,phi1,phi2,qV,r,cV,cAdj,cI,w,params,R0] = covid_Parameters_months()
 
 % Number of time periods
 T =4; %(in months)
@@ -14,6 +14,10 @@ OBJ=1; %=1 Minimize damages & costs
 
 %Initial conditions 
 x0ic=  [0.9074*N1; 0.0103*N1; 0.0143*N1; 0.0667*N1; 0.8662*N2; 0.0138*N2; 0.0196*N2; 0.0986*N2; N1; N2; 0; 0];
+%x0ic=  [0.9074*N1; 0.0103*N1; 0.0143*N1; 0.0667*N1; 0.9074*N2; 0.0103*N2; 0.0143*N2; 0.0667*N2; N1; N2; 0; 0];
+%x0ic=  [0.9074*N1; 0.0103*N1; 0.0143*N1; 0.0667*N1; 0.9074*N2; 0.0103*N2; 0.0143*N2; 0.0667*N2; N1; N2; 0; 0];
+
+
 
 %%%Key varying factors
 % The user needs to select which scenario
@@ -75,8 +79,35 @@ omega=1/6; ODE=2; %6-month immunity, no compliance to TR
     
 end
 
+
+    %Initial guess to find unconstained amount
+GUESS=[]; % = empty : Initial guess is initial conditions
+
+CASE=3; %=3 Optimal Vaccine
+
+SCAR=0.1;
+ 
+ 
+
+[Results, solution, ts10, S1s10, S2s10, E1s10, E2s10, I1s10, I2s10, R1s10, R2s10, N1s10, N2s10, uV1s10, uV2s10, V1s10, V2s10] = ...
+    covid19_Vaccines(T,r,Nset,x0ic,cI,w,omega,beta11,beta22,beta12,beta21,sigma,gamma,phi1,phi2,qV,cV,cAdj,ODE,CASE,MaxTreat,SCAR,OBJ,GUESS);
+
+
+figure
+subplot(211)
+plot(ts10,uV1s10); hold on
+plot(ts10,uV2s10); hold on
+subplot(212)
+plot(ts10,I1s10); hold on
+plot(ts10,I2s10); hold on
+%saveas(gcf,'Contact_SmallDiff_TR_Perm.png'); hold off
+%saveas(gcf,'Death_TR_Perm.png'); hold off
+
+
+
+
 %Optimal and Ad Hoc Allocations of Vaccines and Drugs
-if false
+if true
     
     
     
