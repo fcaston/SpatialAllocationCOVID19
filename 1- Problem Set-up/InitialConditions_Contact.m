@@ -3,7 +3,7 @@ clear variables;
 close all;  
 
 
-[N1,N2,omega,beta11,beta22,beta12,beta21,sigma,gamma,phi,qD,qV,r,cD,cV,cAdj,cI,w,params,R0] = covid_Parameters_months_1()
+[N1,N2,omega,beta11,beta22,beta12,beta21,sigma,gamma,phi1,phi2,qV,r,cV,cAdj,cI,w,params,R0] = covid_Parameters_months_Contact()
 
 
 
@@ -13,6 +13,8 @@ x0=[x0_1*N1];
 
 N=x0_1(1)+x0_1(2);
     
+
+phi =phi1;
 
 t0=0; tf=8+0.230137*2; %tf=4-0.230137*1;  % for when uncontrolled R0 is 3.15
 tspan=linspace(t0,tf,100);%[t0 tf];
@@ -40,8 +42,10 @@ IC_1=[y(end,1)./N,y(end,2)./N,y(end,3)./N,y(end,4)./N]
 
 
 
-t0=0; tf=9-0.2301370*1; %tf=4+0.2301370*0; for when uncontrolled R0 is 3.15
+%t0=0; tf=9-0.2301370*1; %tf=4+0.2301370*0; for when uncontrolled R0 is 3.15
 tspan=linspace(t0,tf,100);%[t0 tf];
+beta11=beta22;
+
 
 [t,y]=ode15s(@(t,x)COVIDeqsInitialConditions(x, beta11, gamma, sigma, phi), tspan, x0,[]);
 

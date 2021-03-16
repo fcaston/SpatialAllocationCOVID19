@@ -14,6 +14,8 @@ x0=[x0_1*N1];
 N=x0_1(1)+x0_1(2);
     
 
+phi =gamma./(1/0.0278 -1);
+
 t0=0; tf=8+0.230137*2; %tf=4-0.230137*1;  % for when uncontrolled R0 is 3.15
 tspan=linspace(t0,tf,100);%[t0 tf];
 
@@ -40,8 +42,10 @@ IC_1=[y(end,1)./N,y(end,2)./N,y(end,3)./N,y(end,4)./N]
 
 
 
-t0=0; tf=9-0.2301370*1; %tf=4+0.2301370*0; for when uncontrolled R0 is 3.15
+%t0=0; tf=9-0.2301370*1; %tf=4+0.2301370*0; for when uncontrolled R0 is 3.15
 tspan=linspace(t0,tf,100);%[t0 tf];
+phi =gamma./(1/0.0178 -1);
+
 
 [t,y]=ode15s(@(t,x)COVIDeqsInitialConditions(x, beta11, gamma, sigma, phi), tspan, x0,[]);
 

@@ -1,4 +1,4 @@
-function [N1,N2,omega,beta11,beta22,beta12,beta21,sigma,gamma,phi1,phi2,qV,r,cV,cAdj,cI,w,params,R0] = covid_Parameters_months()
+function [N1,N2,omega,beta11,beta22,beta12,beta21,sigma,gamma,phi,qD,qV,r,cD,cV,cAdj,cI,w,params,R0] = covid_Parameters_months_Main()
 
 % Population size
 params.N1=1e+0;
@@ -14,23 +14,22 @@ params.omega=1/6; % 6-month immunity (Edridge et al., 2020)
 params.w= 0.133; %Disability weight associated with covid-19 (Nurchis et al., 2020)
 
 
-params.phi1 =params.gamma./(1/0.0278 -1); % Based on a 0.0178 case fatality rate (Abdollahi et al., 2020), using the fact that phi/(phi+gamma) = 0.0178
-params.phi2 =params.gamma./(1/0.0178 -1); % Based on a 0.0178 case fatality rate (Abdollahi et al., 2020), using the fact that phi/(phi+gamma) = 0.0178
+params.phi =params.gamma./(1/0.0178 -1); % Based on a 0.0178 case fatality rate (Abdollahi et al., 2020), using the fact that phi/(phi+gamma) = 0.0178
 
-
-
-params.beta11 = (params.gamma+params.phi1)*2.2*(0.65) ; %Li et al. (2020) for R0 estimate 
-params.beta22 = (params.gamma+params.phi2)*2.2*(0.65); %Tian et al. (2020) for nonphamaceutical intervention effect on R0
-params.beta12 = (params.gamma+params.phi1)*2.2*(0.97-0.65);
-params.beta21 = (params.gamma+params.phi2)*2.2*(0.97-0.65);
+params.beta11 = (params.gamma+params.phi)*2.2*(0.65) ; %Li et al. (2020) for R0 estimate 
+params.beta22 = (params.gamma+params.phi)*2.2*(0.65); %Tian et al. (2020) for nonphamaceutical intervention effect on R0
+params.beta12 = (params.gamma+params.phi)*2.2*(0.97-0.65);
+params.beta21 = (params.gamma+params.phi)*2.2*(0.97-0.65);
 
 
 %%% Efficiency paramters
+params.qD = 0.65; %Efficiency of Drugs
 params.qV = 0.65; %Efficiency of Vaccines
 
 
 %Economic parameters
 params.r=.015./12; %Discount rate
+params.cD= 1500; % Cost of treating one individual via Drug
 params.cV = 20*2; % Cost of treating one individual via Vaccine
 params.cAdj= 10000;% Policy Adjustment Cost
 
@@ -42,16 +41,16 @@ params.cI= 10e6;
 %Naming the parameters
 N1=params.N1; N2=params.N2; 
 beta11=params.beta11; beta22=params.beta22; beta12=params.beta12; beta21=params.beta21;
-sigma=params.sigma; gamma=params.gamma; omega=params.omega; phi1=params.phi1; phi2=params.phi2;
-qV=params.qV;
-r=params.r; cV=params.cV ; cAdj=params.cAdj; 
+sigma=params.sigma; gamma=params.gamma; omega=params.omega; phi=params.phi;
+qD=params.qD; qV=params.qV;
+r=params.r; cD=params.cD; cV=params.cV ; cAdj=params.cAdj; 
 w=params.w; 
 cI=params.cI ; 
 
 
 %Calculating the Next-Generation Matrix and the R0
 F=  [beta11 0 beta12 0; 0 0 0 0; beta21 0 beta22 0; 0 0 0 0];
-V= [0 sigma 0 0; -(gamma+phi1) -sigma 0 0; 0 0 0 sigma; 0 0 -(gamma+phi2) -sigma];
+V= [0 sigma 0 0; -(gamma+phi) -sigma 0 0; 0 0 0 sigma; 0 0 -(gamma+phi) -sigma];
 
 FV=-F*inv(V);
 R0=eigs(FV,1,'lr')
