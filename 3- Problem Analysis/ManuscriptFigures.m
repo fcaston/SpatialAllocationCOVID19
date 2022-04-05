@@ -51,7 +51,7 @@ end
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%   Figures for Optimal and Ad hoc Allocations  %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%   Figures for Optimal and Rule of Thumb Allocations  %%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -96,7 +96,7 @@ load WorkspacePT_Gauss.mat
     xlim([0 ts(scarcePS_D10)])
     ylim([0 0.035])
     title({'(C)'})
-    legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Ad Hoc~~~','State 2: Optimal~~~','State 2: Ad Hoc'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
+    legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Rule of Thumb~~~','State 2: Optimal~~~','State 2: Rule of Thumb'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
 set(legend1,...
     'Position',[0.106626425988088 0.493992323950414 0.811608069283622 0.0352380951245623],...
     'Orientation','horizontal',...
@@ -136,8 +136,8 @@ load WorkspacePN_Gauss.mat
    
 
 
-   % sgtitle({'Optimal Deviation from Ad hoc Drug Allocation and','Corresponding Infection Levels for when Immunity is Permanent'},'Color','Black', 'FontSize', 18);
-   % sgtitle({'Optimal and Ad Hoc Drug Allocation with','Corresponding Infection Levels for When Immunity',' Is Permanent and Treatment Capacity Is 10%'},'Color','Black', 'FontSize', 18);  
+   % sgtitle({'Optimal Deviation from Rule of Thumb Drug Allocation and','Corresponding Infection Levels for when Immunity is Permanent'},'Color','Black', 'FontSize', 18);
+   % sgtitle({'Optimal and Rule of Thumb Drug Allocation with','Corresponding Infection Levels for When Immunity',' Is Permanent and Treatment Capacity Is 10%'},'Color','Black', 'FontSize', 18);  
     
     saveas(gcf,'DeviationDrug_EffectOfSIP.png'); hold off
       
@@ -176,7 +176,7 @@ load WorkspaceST_Gauss.mat
     xlim([0 ts(scarceSS_D10)])
     ylim([0 0.035])
     title({'(C)'})
-    legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Ad Hoc~~~','State 2: Optimal~~~','State 2: Ad Hoc'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
+    legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Rule of Thumb~~~','State 2: Optimal~~~','State 2: Rule of Thumb'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
 set(legend1,...
     'Position',[0.106626425988088 0.493992323950414 0.811608069283622 0.0352380951245623],...
     'Orientation','horizontal',...
@@ -213,8 +213,8 @@ load WorkspaceSN_Gauss.mat
  %  ylabel(han,'Quantity of Treatment', 'FontSize', 16);
     xlabel(han,'Time (months)', 'FontSize', 16);
         
-   % sgtitle({'Optimal Deviation from Ad hoc Drug Allocation and','Corresponding Infection Levels for when Immunity is Permanent'},'Color','Black', 'FontSize', 18);
-   %   sgtitle({'Optimal and Ad Hoc Drug Allocation with','Corresponding Infection Levels for When Immunity','Lasts 6 Months and Treatment Capacity Is 10%'},'Color','Black', 'FontSize', 18);  
+   % sgtitle({'Optimal Deviation from Rule of Thumb Drug Allocation and','Corresponding Infection Levels for when Immunity is Permanent'},'Color','Black', 'FontSize', 18);
+   %   sgtitle({'Optimal and Rule of Thumb Drug Allocation with','Corresponding Infection Levels for When Immunity','Lasts 6 Months and Treatment Capacity Is 10%'},'Color','Black', 'FontSize', 18);  
     saveas(gcf,'DeviationDrug_EffectOfSIP_with6mos.png'); hold off
     
       
@@ -255,7 +255,7 @@ load WorkspacePT_Gauss.mat
     xlim([0 ts(scarcePS_D10)])
     ylim([0 0.035])
         title({'(C)'})
-     legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Ad Hoc~~~','State 2: Optimal~~~','State 2: Ad Hoc'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
+     legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Rule of Thumb~~~','State 2: Optimal~~~','State 2: Rule of Thumb'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
 set(legend1,...
     'Position',[0.106626425988088 0.493992323950414 0.811608069283622 0.0352380951245623],...
     'Orientation','horizontal',...
@@ -289,8 +289,8 @@ load WorkspaceST_Gauss.mat
  
     xlabel(han,'Time (months)', 'FontSize', 16);
         
-   % sgtitle({'Optimal Deviation from Ad hoc Drug Allocation and','Corresponding Infection Levels for when Immunity is Permanent'},'Color','Black', 'FontSize', 18);
-   % sgtitle({'Optimal and Ad Hoc Drug Allocation with','Corresponding Infection Levels for When There Is Compliance','to a Shelter-in-Place Order and Treatment Capacity Is 10%'},'Color','Black', 'FontSize', 18);  
+   % sgtitle({'Optimal Deviation from Rule of Thumb Drug Allocation and','Corresponding Infection Levels for when Immunity is Permanent'},'Color','Black', 'FontSize', 18);
+   % sgtitle({'Optimal and Rule of Thumb Drug Allocation with','Corresponding Infection Levels for When There Is Compliance','to a Shelter-in-Place Order and Treatment Capacity Is 10%'},'Color','Black', 'FontSize', 18);  
     
   saveas(gcf,'DeviationDrug_EffectOfImmunityWithSIP.png'); hold off
     
@@ -328,7 +328,7 @@ load WorkspacePN_Gauss.mat
     xlim([0 ts(scarcePS_D10)])
     ylim([0 0.1])
     title({'(C)'})
-      legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Ad Hoc~~~','State 2: Optimal~~~','State 2: Ad Hoc'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
+      legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Rule of Thumb~~~','State 2: Optimal~~~','State 2: Rule of Thumb'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
 set(legend1,...
        'Position',[0.106626425988088 0.493992323950414 0.811608069283622 0.0352380951245623],...
     'Orientation','horizontal',...
@@ -364,8 +364,8 @@ load WorkspaceSN_Gauss.mat
  
     xlabel(han,'Time (months)', 'FontSize', 16);
         
-   % sgtitle({'Optimal Deviation from Ad hoc Drug Allocation and','Corresponding Infection Levels for when Immunity is Permanent'},'Color','Black', 'FontSize', 18);
-   %sgtitle({'Optimal and Ad Hoc Drug Allocation with','Corresponding Infection Levels for When There Is No Compliance','to a Shelter-in-Place Order and Treatment Capacity Is 10%'},'Color','Black', 'FontSize', 18);  
+   % sgtitle({'Optimal Deviation from Rule of Thumb Drug Allocation and','Corresponding Infection Levels for when Immunity is Permanent'},'Color','Black', 'FontSize', 18);
+   %sgtitle({'Optimal and Rule of Thumb Drug Allocation with','Corresponding Infection Levels for When There Is No Compliance','to a Shelter-in-Place Order and Treatment Capacity Is 10%'},'Color','Black', 'FontSize', 18);  
     
    saveas(gcf,'DeviationDrug_EffectOfImmunityWithoutSIP.png'); hold off
       
@@ -403,7 +403,7 @@ load WorkspacePN_Gauss.mat
     xlim([0 ts(scarcePS_D05)])
     ylim([0 0.1])
     title({'(C)'})
-      legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Ad Hoc~~~','State 2: Optimal~~~','State 2: Ad Hoc'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
+      legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Rule of Thumb~~~','State 2: Optimal~~~','State 2: Rule of Thumb'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
 set(legend1,...
        'Position',[0.106626425988088 0.493992323950414 0.811608069283622 0.0352380951245623],...
     'Orientation','horizontal',...
@@ -439,8 +439,8 @@ load WorkspaceSN_Gauss.mat
  
     xlabel(han,'Time (months)', 'FontSize', 16);
         
-   % sgtitle({'Optimal Deviation from Ad hoc Drug Allocation and','Corresponding Infection Levels for when Immunity is Permanent'},'Color','Black', 'FontSize', 18);
-   %sgtitle({'Optimal and Ad Hoc Drug Allocation with','Corresponding Infection Levels for When There Is No Compliance','to a Shelter-in-Place Order and Treatment Capacity Is 10%'},'Color','Black', 'FontSize', 18);  
+   % sgtitle({'Optimal Deviation from Rule of Thumb Drug Allocation and','Corresponding Infection Levels for when Immunity is Permanent'},'Color','Black', 'FontSize', 18);
+   %sgtitle({'Optimal and Rule of Thumb Drug Allocation with','Corresponding Infection Levels for When There Is No Compliance','to a Shelter-in-Place Order and Treatment Capacity Is 10%'},'Color','Black', 'FontSize', 18);  
     
    saveas(gcf,'DeviationDrug_EffectOfImmunityWithoutSIP_5percent.png'); hold off
       
@@ -482,7 +482,7 @@ load WorkspacePT_Gauss.mat
     xlim([0 ts(scarcePS_D05)])
     ylim([0 0.035])
       title({'(D)'}) 
-     legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Ad Hoc~~~','State 2: Optimal~~~','State 2: Ad Hoc'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
+     legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Rule of Thumb~~~','State 2: Optimal~~~','State 2: Rule of Thumb'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
 set(legend1,...
         'Position',[0.106626425988088 0.493992323950414 0.811608069283622 0.0352380951245623],...
     'Orientation','horizontal',...
@@ -510,7 +510,7 @@ set(legend1,...
     xlim([0 ts(scarcePS_D10)])
     ylim([0 0.035])
     title({'(E)'}) 
-   % legend1=legend([p1 p3 p2 p4],{'State 1: Optimal','State 1: Ad Hoc','State 2: Optimal','State 2: Ad Hoc'},'Interpreter','latex','Orientation','vertical','Location','northeast');
+   % legend1=legend([p1 p3 p2 p4],{'State 1: Optimal','State 1: Rule of Thumb','State 2: Optimal','State 2: Rule of Thumb'},'Interpreter','latex','Orientation','vertical','Location','northeast');
 
 
 
@@ -539,7 +539,7 @@ set(legend1,...
     han.YLabel.Visible='on';
     xlabel(han,'Time (months)', 'FontSize', 16);
         
-     % sgtitle({'Optimal and Ad Hoc Drug Allocation with','Corresponding Infection Levels for when Immunity Is Permanent','and There Is Compliance to a Shelter-in-Place Order'},'Color','Black', 'FontSize', 18);  
+     % sgtitle({'Optimal and Rule of Thumb Drug Allocation with','Corresponding Infection Levels for when Immunity Is Permanent','and There Is Compliance to a Shelter-in-Place Order'},'Color','Black', 'FontSize', 18);  
     
    saveas(gcf,'DeviationDrug_EffectOfCons_withPermAndSIP.png'); hold off
    
@@ -577,7 +577,7 @@ load WorkspacePN_Gauss.mat
     xlim([0 ts(scarcePN_D05)])
     ylim([0 0.1])
     title({'(D)'}) 
-     legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Ad Hoc~~~','State 2: Optimal~~~','State 2: Ad Hoc'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
+     legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Rule of Thumb~~~','State 2: Optimal~~~','State 2: Rule of Thumb'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
 set(legend1,...
         'Position',[0.106626425988088 0.493992323950414 0.811608069283622 0.0352380951245623],...
     'Orientation','horizontal',...
@@ -604,7 +604,7 @@ set(legend1,...
     xlim([0 ts(scarcePN_D10)])
     ylim([0 0.1])    
     title({'(E)'}) 
-    %legend1=legend([p1 p3 p2 p4],{'State 1: Optimal','State 1: Ad Hoc','State 2: Optimal','State 2: Ad Hoc'},'Interpreter','latex','Orientation','vertical','Location','northeast');
+    %legend1=legend([p1 p3 p2 p4],{'State 1: Optimal','State 1: Rule of Thumb','State 2: Optimal','State 2: Rule of Thumb'},'Interpreter','latex','Orientation','vertical','Location','northeast');
 
 
 
@@ -634,7 +634,7 @@ set(legend1,...
     han.YLabel.Visible='on';
     xlabel(han,'Time (months)', 'FontSize', 16);
         
-    % sgtitle({'Optimal and Ad Hoc Drug Allocation with','Corresponding Infection Levels for when Immunity Is Permanent','and There Is No Compliance to a Shelter-in-Place Order'},'Color','Black', 'FontSize', 18);  
+    % sgtitle({'Optimal and Rule of Thumb Drug Allocation with','Corresponding Infection Levels for when Immunity Is Permanent','and There Is No Compliance to a Shelter-in-Place Order'},'Color','Black', 'FontSize', 18);  
       
    saveas(gcf,'DeviationDrug_EffectOfCons_withPermAndnoSIP.png'); hold off
       
@@ -674,7 +674,7 @@ load WorkspaceST_Gauss.mat
     xlim([0 ts(scarceSS_D05)])
     ylim([0 0.035])
     title({'(D)'}) 
-     legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Ad Hoc~~~','State 2: Optimal~~~','State 2: Ad Hoc'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
+     legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Rule of Thumb~~~','State 2: Optimal~~~','State 2: Rule of Thumb'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
 set(legend1,...
         'Position',[0.106626425988088 0.493992323950414 0.811608069283622 0.0352380951245623],...
     'Orientation','horizontal',...
@@ -701,7 +701,7 @@ set(legend1,...
     %ylabel({'Prop. of','Infected'}, 'FontSize', 16); 
     xlim([0 ts(scarceSS_D10)])
     ylim([0 0.035])
-    %legend1=legend([p1 p3 p2 p4],{'State 1: Optimal','State 1: Ad Hoc','State 2: Optimal','State 2: Ad Hoc'},'Interpreter','latex','Orientation','vertical','Location','northeast');
+    %legend1=legend([p1 p3 p2 p4],{'State 1: Optimal','State 1: Rule of Thumb','State 2: Optimal','State 2: Rule of Thumb'},'Interpreter','latex','Orientation','vertical','Location','northeast');
     title({'(E)'}) 
 
 
@@ -731,7 +731,7 @@ set(legend1,...
     han.YLabel.Visible='on';
     xlabel(han,'Time (months)', 'FontSize', 16);
         
-   %sgtitle({'Optimal and Ad Hoc Drug Allocation with','Corresponding Infection Levels for when Immunity Lasts 6 Months','and There Is Compliance to a Shelter-in-Place Order'},'Color','Black', 'FontSize', 18);  
+   %sgtitle({'Optimal and Rule of Thumb Drug Allocation with','Corresponding Infection Levels for when Immunity Lasts 6 Months','and There Is Compliance to a Shelter-in-Place Order'},'Color','Black', 'FontSize', 18);  
       
    saveas(gcf,'DeviationDrug_EffectOfCons_with6moAndSIP.png'); hold off
 end
@@ -770,7 +770,7 @@ load WorkspaceSN_Gauss.mat
     xlim([0 ts(scarceSN_D05)])
     ylim([0 0.1])    
     title({'(D)'}) 
-     legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Ad Hoc~~~','State 2: Optimal~~~','State 2: Ad Hoc'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
+     legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Rule of Thumb~~~','State 2: Optimal~~~','State 2: Rule of Thumb'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
 set(legend1,...
         'Position',[0.106626425988088 0.493992323950414 0.811608069283622 0.0352380951245623],...
     'Orientation','horizontal',...
@@ -796,7 +796,7 @@ set(legend1,...
    % ylabel({'Prop. of','Infected'}, 'FontSize', 16); 
     xlim([0 ts(scarceSN_D10)])
     ylim([0 0.1])
-    %legend1=legend([p1 p3 p2 p4],{'State 1: Optimal','State 1: Ad Hoc','State 2: Optimal','State 2: Ad Hoc'},'Interpreter','latex','Orientation','vertical','Location','northeast');
+    %legend1=legend([p1 p3 p2 p4],{'State 1: Optimal','State 1: Rule of Thumb','State 2: Optimal','State 2: Rule of Thumb'},'Interpreter','latex','Orientation','vertical','Location','northeast');
     title({'(E)'}) 
 
 
@@ -826,7 +826,7 @@ set(legend1,...
     han.YLabel.Visible='on';
     xlabel(han,'Time (months)', 'FontSize', 16);
         
-   % sgtitle({'Optimal and Ad Hoc Drug Allocation with','Corresponding Infection Levels for when Immunity Lasts 6 Months','and There Is No Compliance to a Shelter-in-Place Order'},'Color','Black', 'FontSize', 18);  
+   % sgtitle({'Optimal and Rule of Thumb Drug Allocation with','Corresponding Infection Levels for when Immunity Lasts 6 Months','and There Is No Compliance to a Shelter-in-Place Order'},'Color','Black', 'FontSize', 18);  
       
    saveas(gcf,'DeviationDrug_EffectOfCons_with6moAndNoSIP.png'); hold off
       
@@ -871,9 +871,9 @@ load WorkspacePT_Gauss.mat
     p4=plot(ts,I2s10_ah,'LineWidth',3,'Color',re,'LineStyle',':');hold on
     ylabel({'Prop. of','Infected'}, 'FontSize', 16); 
     xlim([0 ts(scarcePS_V10)])
-    ylim([0 .09])
+    ylim([0 .03])
      title({'(C)'})
-      legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Ad Hoc~~~','State 2: Optimal~~~','State 2: Ad Hoc'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
+      legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Rule of Thumb~~~','State 2: Optimal~~~','State 2: Rule of Thumb'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
 set(legend1,...
        'Position',[0.106626425988088 0.493992323950414 0.811608069283622 0.0352380951245623],...
     'Orientation','horizontal',...
@@ -910,9 +910,9 @@ load WorkspacePN_Gauss.mat
  %  ylabel(han,'Quantity of Treatment', 'FontSize', 16);
     xlabel(han,'Time (months)', 'FontSize', 16);
     
-   % sgtitle({'Optimal and Ad Hoc Vaccine Allocation with','Corresponding Infection Levels for When Immunity',' Is Permanent and Treatment Capacity Is 10%'},'Color','Black', 'FontSize', 18);  
+   % sgtitle({'Optimal and Rule of Thumb Vaccine Allocation with','Corresponding Infection Levels for When Immunity',' Is Permanent and Treatment Capacity Is 10%'},'Color','Black', 'FontSize', 18);  
     
-   % saveas(gcf,'DeviationVaccine_EffectOfSIP.png'); hold off
+    saveas(gcf,'DeviationVaccine_EffectOfSIP.png'); hold off
     
     
       
@@ -951,7 +951,7 @@ load WorkspaceST_Gauss.mat
     xlim([0 ts(scarceSS_V10)])
     ylim([0 .03])
     title({'(C)'})
-     legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Ad Hoc~~~','State 2: Optimal~~~','State 2: Ad Hoc'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
+     legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Rule of Thumb~~~','State 2: Optimal~~~','State 2: Rule of Thumb'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
 set(legend1,...
        'Position',[0.106626425988088 0.493992323950414 0.811608069283622 0.0352380951245623],...
     'Orientation','horizontal',...
@@ -989,7 +989,7 @@ load WorkspaceSN_Gauss.mat
  %  ylabel(han,'Quantity of Treatment', 'FontSize', 16);
     xlabel(han,'Time (months)', 'FontSize', 16);
         
-   %sgtitle({'Optimal and Ad Hoc Vaccine Allocation with','Corresponding Recovery Levels for when Immunity','Lasts 6 months and Treatment Capacity Is 10%'},'Color','Black', 'FontSize', 18);  
+   %sgtitle({'Optimal and Rule of Thumb Vaccine Allocation with','Corresponding Recovery Levels for when Immunity','Lasts 6 months and Treatment Capacity Is 10%'},'Color','Black', 'FontSize', 18);  
     
   saveas(gcf,'DeviationVaccine_EffectOfSIP_with6mos.png'); hold off
     
@@ -1032,7 +1032,7 @@ load WorkspacePT_Gauss.mat
     xlim([0 ts(scarcePS_V10)])
     ylim([0 .03])
     title({'(C)'}) 
-       legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Ad Hoc~~~','State 2: Optimal~~~','State 2: Ad Hoc'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
+       legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Rule of Thumb~~~','State 2: Optimal~~~','State 2: Rule of Thumb'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
 set(legend1,...
       'Position',[0.106626425988088 0.493992323950414 0.811608069283622 0.0352380951245623],...
     'Orientation','horizontal',...
@@ -1069,8 +1069,8 @@ load WorkspaceST_Gauss.mat
  
     xlabel(han,'Time (months)', 'FontSize', 16);
         
-   % sgtitle({'Optimal Deviation from Ad hoc Drug Allocation and','Corresponding Infection Levels for when Immunity is Permanent'},'Color','Black', 'FontSize', 18);
- % sgtitle({'Optimal and Ad Hoc Vaccine Allocation with','Corresponding Recovery Levels for When There Is Compliance','to a Selter-in-Place Order and Treatment Capacity Is 10%'},'Color','Black', 'FontSize', 18);  
+   % sgtitle({'Optimal Deviation from Rule of Thumb Drug Allocation and','Corresponding Infection Levels for when Immunity is Permanent'},'Color','Black', 'FontSize', 18);
+ % sgtitle({'Optimal and Rule of Thumb Vaccine Allocation with','Corresponding Recovery Levels for When There Is Compliance','to a Selter-in-Place Order and Treatment Capacity Is 10%'},'Color','Black', 'FontSize', 18);  
     
    saveas(gcf,'DeviationVaccine_EffectOfImmunityWithSIP.png'); hold off
     
@@ -1111,7 +1111,7 @@ load WorkspacePN_Gauss.mat
     xlim([0 ts(scarcePN_V10)])
     ylim([0 .09])
         title({'(C)'}) 
-        legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Ad Hoc~~~','State 2: Optimal~~~','State 2: Ad Hoc'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
+        legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Rule of Thumb~~~','State 2: Optimal~~~','State 2: Rule of Thumb'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
 set(legend1,...
      'Position',[0.106626425988088 0.493992323950414 0.811608069283622 0.0352380951245623],...
     'Orientation','horizontal',...
@@ -1148,7 +1148,7 @@ load WorkspaceSN_Gauss.mat
  
     xlabel(han,'Time (months)', 'FontSize', 16);
         
-% sgtitle({'Optimal and Ad Hoc Vaccine Allocation with','Corresponding Recovery Levels for When There Is No Compliance','to a Shelter-in-Place Order and Treatment Capacity Is 10%'},'Color','Black', 'FontSize', 18);  
+% sgtitle({'Optimal and Rule of Thumb Vaccine Allocation with','Corresponding Recovery Levels for When There Is No Compliance','to a Shelter-in-Place Order and Treatment Capacity Is 10%'},'Color','Black', 'FontSize', 18);  
    
    saveas(gcf,'DeviationVaccine_EffectOfImmunityWithoutSIP.png'); hold off
     
@@ -1194,7 +1194,7 @@ load WorkspacePT_Gauss.mat
     xlim([0 ts(scarcePS_V05)])
     ylim([0 .031])
     title({'(D)'}) 
-     legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Ad Hoc~~~','State 2: Optimal~~~','State 2: Ad Hoc'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
+     legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Rule of Thumb~~~','State 2: Optimal~~~','State 2: Rule of Thumb'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
 set(legend1,...
     'Position',[0.106626425988088 0.493992323950414 0.811608069283622 0.0352380951245623],...
     'Orientation','horizontal',...
@@ -1220,7 +1220,7 @@ set(legend1,...
     xlim([0 ts(scarcePS_V10)])
     ylim([0 .031])
     title({'(E)'}) 
-    %legend1=legend([p1 p3 p2 p4],{'State 1: Optimal','State 1: Ad Hoc','State 2: Optimal','State 2: Ad Hoc'},'Interpreter','latex','Orientation','vertical','Location','southeast');
+    %legend1=legend([p1 p3 p2 p4],{'State 1: Optimal','State 1: Rule of Thumb','State 2: Optimal','State 2: Rule of Thumb'},'Interpreter','latex','Orientation','vertical','Location','southeast');
 
 
     subplot(2,3,3)
@@ -1250,7 +1250,7 @@ set(legend1,...
     han.YLabel.Visible='on';
     xlabel(han,'Time (months)', 'FontSize', 16);
         
- %   sgtitle({'Optimal and Ad Hoc Vaccine Allocation with','Corresponding Infection Levels for when Immunity Is Permanent','and There Is Compliance to a Shelter-in-Place Order'},'Color','Black', 'FontSize', 18);  
+ %   sgtitle({'Optimal and Rule of Thumb Vaccine Allocation with','Corresponding Infection Levels for when Immunity Is Permanent','and There Is Compliance to a Shelter-in-Place Order'},'Color','Black', 'FontSize', 18);  
     
    saveas(gcf,'DeviationVaccine_EffectOfCons_withPermAndSIP.png'); hold off
     
@@ -1291,7 +1291,7 @@ load WorkspacePN_Gauss.mat
     xlim([0 ts(scarcePN_V05)])
     ylim([0 .09])
      title({'(D)'})
-     legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Ad Hoc~~~','State 2: Optimal~~~','State 2: Ad Hoc'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
+     legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Rule of Thumb~~~','State 2: Optimal~~~','State 2: Rule of Thumb'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
 set(legend1,...
         'Position',[0.106626425988088 0.493992323950414 0.811608069283622 0.0352380951245623],...
     'Orientation','horizontal',...
@@ -1320,7 +1320,7 @@ set(legend1,...
     xlim([0 ts(scarcePN_V10)])
     ylim([0 .09])
     title({'(E)'})
-    %legend1=legend([p1 p3 p2 p4],{'State 1: Optimal','State 1: Ad Hoc','State 2: Optimal','State 2: Ad Hoc'},'Interpreter','latex','Orientation','vertical','Location','northwest');
+    %legend1=legend([p1 p3 p2 p4],{'State 1: Optimal','State 1: Rule of Thumb','State 2: Optimal','State 2: Rule of Thumb'},'Interpreter','latex','Orientation','vertical','Location','northwest');
 
 
 
@@ -1350,7 +1350,7 @@ set(legend1,...
     han.YLabel.Visible='on';
     xlabel(han,'Time (months)', 'FontSize', 16);
         
-  % sgtitle({'Optimal and Ad Hoc Vaccine Allocation with','Corresponding Infection Levels for when Immunity Is Permanent','and There Is No Compliance to a Shelter-in-Place Order'},'Color','Black', 'FontSize', 18);  
+  % sgtitle({'Optimal and Rule of Thumb Vaccine Allocation with','Corresponding Infection Levels for when Immunity Is Permanent','and There Is No Compliance to a Shelter-in-Place Order'},'Color','Black', 'FontSize', 18);  
    
       saveas(gcf,'DeviationVaccine_EffectOfCons_withPermAndnoSIP.png'); hold off
     
@@ -1392,7 +1392,7 @@ load WorkspaceST_Gauss.mat
     xlim([0 ts(scarceSS_V05)])
     ylim([0 .033])
          title({'(D)'})
-     legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Ad Hoc~~~','State 2: Optimal~~~','State 2: Ad Hoc'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
+     legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Rule of Thumb~~~','State 2: Optimal~~~','State 2: Rule of Thumb'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
 set(legend1,...
     'Position',[0.106626425988088 0.493992323950414 0.811608069283622 0.0352380951245623],...
     'Orientation','horizontal',...
@@ -1419,7 +1419,7 @@ set(legend1,...
    % ylabel({'Prop. of','Recovered'}, 'FontSize', 16); 
     xlim([0 ts(scarceSS_V10)])
     ylim([0 .033])
-    %legend1=legend([p1 p3 p2 p4],{'State 1: Optimal','State 1: Ad Hoc','State 2: Optimal','State 2: Ad Hoc'},'Interpreter','latex','Orientation','vertical','Location','southeast');
+    %legend1=legend([p1 p3 p2 p4],{'State 1: Optimal','State 1: Rule of Thumb','State 2: Optimal','State 2: Rule of Thumb'},'Interpreter','latex','Orientation','vertical','Location','southeast');
      title({'(E)'})
 
 
@@ -1450,7 +1450,7 @@ load WorkspaceST_Gauss.mat
     han.YLabel.Visible='on';
     xlabel(han,'Time (months)', 'FontSize', 16);
         
-%  sgtitle({'Optimal and Ad Hoc Vaccine Allocation with','Corresponding Infection Levels for when Immunity Lasts 6 Months','and There Is Compliance to a Shelter-in-Place Order'},'Color','Black', 'FontSize', 18);  
+%  sgtitle({'Optimal and Rule of Thumb Vaccine Allocation with','Corresponding Infection Levels for when Immunity Lasts 6 Months','and There Is Compliance to a Shelter-in-Place Order'},'Color','Black', 'FontSize', 18);  
       
    saveas(gcf,'DeviationVaccine_EffectOfCons_with6moAndSIP.png'); hold off
     
@@ -1493,7 +1493,7 @@ load WorkspaceSN_Gauss.mat
     xlim([0 ts(scarceSN_V05)])
     ylim([0 .1])
     title({'(D)'})
-      legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Ad Hoc~~~','State 2: Optimal~~~','State 2: Ad Hoc'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
+      legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Rule of Thumb~~~','State 2: Optimal~~~','State 2: Rule of Thumb'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
 set(legend1,...
      'Position',[0.106626425988088 0.493992323950414 0.811608069283622 0.0352380951245623],...
     'Orientation','horizontal',...
@@ -1520,7 +1520,7 @@ set(legend1,...
     %ylabel({'Prop. of','Recovered'}, 'FontSize', 16); 
     xlim([0 ts(scarceSN_V10)])
     ylim([0 .1])
-    %legend1=legend([p1 p3 p2 p4],{'State 1: Optimal','State 1: Ad Hoc','State 2: Optimal','State 2: Ad Hoc'},'Interpreter','latex','Orientation','vertical','Location','northwest');
+    %legend1=legend([p1 p3 p2 p4],{'State 1: Optimal','State 1: Rule of Thumb','State 2: Optimal','State 2: Rule of Thumb'},'Interpreter','latex','Orientation','vertical','Location','northwest');
      title({'(E)'})
 
 
@@ -1552,7 +1552,7 @@ load WorkspaceSN_Gauss.mat
     han.YLabel.Visible='on';
     xlabel(han,'Time (months)', 'FontSize', 16);
         
-  % sgtitle({'Optimal and Ad Hoc Vaccine Allocation with','Corresponding Infection Levels for when Immunity Lasts 6 Months','and There Is No Compliance Shelter-in-Place Order'},'Color','Black', 'FontSize', 18);  
+  % sgtitle({'Optimal and Rule of Thumb Vaccine Allocation with','Corresponding Infection Levels for when Immunity Lasts 6 Months','and There Is No Compliance Shelter-in-Place Order'},'Color','Black', 'FontSize', 18);  
      
    saveas(gcf,'DeviationVaccine_EffectOfCons_with6moAndNoSIP.png'); hold off
     
@@ -1591,11 +1591,11 @@ load WorkspacePT_Gauss.mat
     ylim([0 .031])
     title({'Permanent Immunity, Compliance to Travel Restrictions and 10% Vaccine Capacity'}) 
     %title({'(E)'}) 
-    %legend1=legend([p1 p3 p2 p4],{'State 1: Optimal','State 1: Ad Hoc','State 2: Optimal','State 2: Ad Hoc'},'Interpreter','latex','Orientation','vertical','Location','southeast');
+    %legend1=legend([p1 p3 p2 p4],{'State 1: Optimal','State 1: Rule of Thumb','State 2: Optimal','State 2: Rule of Thumb'},'Interpreter','latex','Orientation','vertical','Location','southeast');
 
      ylabel({'Prop. of','Infected'}, 'FontSize', 16); 
      xlabel({'Time (months)'}, 'FontSize', 16); 
-legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Ad Hoc~~~','State 2: Optimal~~~','State 2: Ad Hoc'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
+legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Rule of Thumb~~~','State 2: Optimal~~~','State 2: Rule of Thumb'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
 set(legend1,...
      'Orientation','vertical',...
      'Interpreter','latex');
@@ -1612,7 +1612,7 @@ set(legend1,...
     han.YLabel.Visible='on';
     xlabel(han,'Time (months)', 'FontSize', 16);
         
- %   sgtitle({'Optimal and Ad Hoc Vaccine Allocation with','Corresponding Infection Levels for when Immunity Is Permanent','and There Is Compliance to a Shelter-in-Place Order'},'Color','Black', 'FontSize', 18);  
+ %   sgtitle({'Optimal and Rule of Thumb Vaccine Allocation with','Corresponding Infection Levels for when Immunity Is Permanent','and There Is Compliance to a Shelter-in-Place Order'},'Color','Black', 'FontSize', 18);  
     
    saveas(gcf,'DeviationVaccine_EffectOfCons_withPermAndSIP_PanelE.png'); hold off
 
@@ -1664,7 +1664,7 @@ p4=plot(ts,integrate(gI2s,ts,0)./integrate(gI2s_no,ts,0)-1,'LineWidth',3,'Color'
 ylim([-0.16 0])
 title({'Perm. Immunity &','Compliance to TR','(A)'})
 ylabel({'Relative','Difference'}, 'FontSize', 16); 
-    legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Ad Hoc~~~','State 2: Optimal~~~','State 2: Ad Hoc'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
+    legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Rule of Thumb~~~','State 2: Optimal~~~','State 2: Rule of Thumb'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
 set(legend1,...
     'Position',[0.117340711702374 0.479706609664701 0.811608069283622 0.0352380951245625],...
     'Orientation','horizontal',...
@@ -1807,7 +1807,7 @@ p4=plot(ts,integrate(gI2s,ts,0)./integrate(gI2s_no,ts,0)-1,'LineWidth',3,'Color'
 ylim([-0.3 0])
 title({'Perm. Immunity &','Compliance to TR','(A)'})
 ylabel({'Relative','Difference'}, 'FontSize', 16); 
-    legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Ad Hoc~~~','State 2: Optimal~~~','State 2: Ad Hoc'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
+    legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Rule of Thumb~~~','State 2: Optimal~~~','State 2: Rule of Thumb'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
 set(legend1,...
     'Position',[0.117340711702374 0.479706609664701 0.811608069283622 0.0352380951245625],...
     'Orientation','horizontal',...
@@ -1898,7 +1898,7 @@ p2=plot(ts,integrate(gI2s_opt,ts,0)./integrate(gI2s_no,ts,0)-1,'LineWidth',3,'Co
 p4=plot(ts,integrate(gI2s,ts,0)./integrate(gI2s_no,ts,0)-1,'LineWidth',3,'Color',re,'LineStyle',':'); hold on
 title({'6-mo. Immunity &','Noncompliance to TR','(D)'})
 ylim([-0.3 0])
-%    legend1=legend([p1 p3 p2 p4],{'State 1: Optimal','State 1: Ad Hoc','State 2: Optimal','State 2: Ad Hoc'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
+%    legend1=legend([p1 p3 p2 p4],{'State 1: Optimal','State 1: Rule of Thumb','State 2: Optimal','State 2: Rule of Thumb'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
 %set(legend1,...
 %    'Position',[0.728571142469134 0.0853001236695748 0.192857428959438 0.11595238049825],...
 %    'Orientation','vertical',...
@@ -1958,7 +1958,7 @@ p4=plot(ts,integrate(gI2s,ts,0)./integrate(gI2s_no,ts,0)-1,'LineWidth',3,'Color'
 ylim([-0.3 0])
 title({'Perm. Immunity &','Compliance to TR','(A)'})
 ylabel({'Relative','Difference'}, 'FontSize', 16); 
-    legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Ad Hoc~~~','State 2: Optimal~~~','State 2: Ad Hoc'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
+    legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Rule of Thumb~~~','State 2: Optimal~~~','State 2: Rule of Thumb'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
 set(legend1,...
     'Position',[0.117340711702374 0.479706609664701 0.811608069283622 0.0352380951245625],...
     'Orientation','horizontal',...
@@ -2106,7 +2106,7 @@ p4=plot(ts,integrate(gI2s,ts,0)./integrate(gI2s_no,ts,0)-1,'LineWidth',3,'Color'
 ylim([-0.2 0])
 title({'Perm. Immunity &','Compliance to TR','(A)'})
 ylabel({'Relative','Difference'}, 'FontSize', 16); 
-    legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Ad Hoc~~~','State 2: Optimal~~~','State 2: Ad Hoc'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
+    legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Rule of Thumb~~~','State 2: Optimal~~~','State 2: Rule of Thumb'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
 set(legend1,...
     'Position',[0.117340711702374 0.479706609664701 0.811608069283622 0.0352380951245625],...
     'Orientation','horizontal',...
@@ -2251,7 +2251,7 @@ p4=plot(ts,integrate(gI2s,ts,0)./integrate(gI2s_no,ts,0)-1,'LineWidth',3,'Color'
 ylim([-0.3 0])
 title({'Perm. Immunity &','Compliance to TR','(A)'})
 ylabel({'Relative','Difference'}, 'FontSize', 16); 
-    legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Ad Hoc~~~','State 2: Optimal~~~','State 2: Ad Hoc'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
+    legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Rule of Thumb~~~','State 2: Optimal~~~','State 2: Rule of Thumb'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
 set(legend1,...
     'Position',[0.117340711702374 0.479706609664701 0.811608069283622 0.0352380951245625],...
     'Orientation','horizontal',...
@@ -2395,7 +2395,7 @@ p4=plot(ts,integrate(gI2s,ts,0)./integrate(gI2s_no,ts,0)-1,'LineWidth',3,'Color'
 ylim([-0.4 0])
 title({'Perm. Immunity &','Compliance to TR','(A)'})
 ylabel({'Relative','Difference'}, 'FontSize', 16); 
-    legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Ad Hoc~~~','State 2: Optimal~~~','State 2: Ad Hoc'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
+    legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Rule of Thumb~~~','State 2: Optimal~~~','State 2: Rule of Thumb'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
 set(legend1,...
     'Position',[0.117340711702374 0.479706609664701 0.811608069283622 0.0352380951245625],...
     'Orientation','horizontal',...
@@ -2525,7 +2525,7 @@ end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %Figure A13: Sensitivity of drug results to workability cost parameter
-if true
+if false
 
     
     fig=figure
@@ -2538,7 +2538,7 @@ yyaxis left
     xticks([log(CADJ(1)),log(1e5),log(CADJ(8))]);
     xticklabels({'1e^1','1e^5','1e^9'});
     xlim([log(CADJ(1)) log(CADJ(end))])
-    ylabel({'Variance of the Optimal ','Deviation From the Ad Hoc'},'Interpreter','tex','FontSize', 14);     
+    ylabel({'Variance of the Optimal ','Deviation From the Rule of Thumb'},'Interpreter','tex','FontSize', 14);     
     ylim([0 0.000012])
     plot([log(1e4) log(1e4)],[0 100],'k:','LineWidth',2); 
     plot([log(1e7) log(1e7)],[0 100],'k-','LineWidth',2); 
@@ -2658,7 +2658,7 @@ yyaxis left
     xticks([log(CADJ(1)),log(CADJ(5)),log(CADJ(9))]);
     xticklabels({'1e^1','1e^5','1e^9'});
     xlim([log(CADJ(1)) log(CADJ(end))])
-    ylabel({'Variance of the Optimal ','Deviation From the Ad Hoc'},'Interpreter','tex','FontSize', 14);     
+    ylabel({'Variance of the Optimal Deviation','From the Rule of Thumb'},'Interpreter','tex','FontSize', 14);     
     plot([log(CADJ(4)) log(CADJ(4))],[0 100],'k:','LineWidth',2); 
     plot([log(CADJ(7)) log(CADJ(7))],[0 100],'k-','LineWidth',2); 
     ylim([0 100])
@@ -2775,7 +2775,7 @@ end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %Figure A14: Sensitivity of results to drug effectiveness 
-if true
+if false
 
     
     fig=figure
@@ -2787,7 +2787,7 @@ yyaxis left
     plot(QD,DrugProp,'LineWidth',3);hold on
     xticks([QD(1),QD(3),QD(5)]);
     xlim([QD(1) QD(end)])
-    ylabel({'Variance of the Optimal ','Deviation From the Ad Hoc'},'Interpreter','tex','FontSize', 14);     
+    ylabel({'Variance of the Optimal ','Deviation From the Rule of Thumb'},'Interpreter','tex','FontSize', 14);     
     plot([QD(2) QD(2)],[0 40],'k:','LineWidth',2); 
     ylim([0 1.5e-5])
     xlim([0.55 0.95])
@@ -2899,7 +2899,7 @@ yyaxis left
     plot(QV,VaccineProp*100,'LineWidth',3);hold on
     xticks([QV(1),QV(3),QV(5)]);
     xlim([QV(1) QV(end)])
-    ylabel({'Variance of the Optimal ','Deviation From the Ad Hoc'},'Interpreter','tex','FontSize', 14);     
+    ylabel({'Variance of the Optimal Deviation','From the Rule of Thumb'},'Interpreter','tex','FontSize', 14);     
     plot([QV(2) QV(2)],[0 40],'k:','LineWidth',2); 
     ylim([0 40])
     title({'Perm. Immunity &','Compliance to TR','(A)'})
@@ -2990,7 +2990,7 @@ subplot(248)
     han.Title.Visible='on';
     han.XLabel.Visible='on';
     han.YLabel.Visible='on';
-    xlabel(han,'Effectiveness of Vaccine', 'FontSize', 16,'Interpreter','tex');
+    xlabel(han,{'','Effectiveness of Vaccine'}, 'FontSize', 16,'Interpreter','tex');
     
     saveas(gcf,'SA_Effectivenss_Vaccine.png'); hold off
     
