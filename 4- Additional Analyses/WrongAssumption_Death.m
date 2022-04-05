@@ -1948,7 +1948,7 @@ end
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%   Correct Assumptions but Ad Hoc   %%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%   Correct Assumptions but Rule of Thumb   %%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%   10 Percent Vaccine   %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1957,7 +1957,7 @@ end
 
 %%% We assume correctly that immunity is permanent
 %%% We assume correctly that there is compliance to SIP order
-%%% But we used the ad hoc allocation
+%%% But we used the Rule of Thumb allocation
 if true
 
 
@@ -2121,7 +2121,7 @@ end
 
 %%% We assume correctly that immunity is permanent
 %%% We assume correctly that there is noncompliance to SIP order
-%%% But we used the ad hoc allocation
+%%% But we used the Rule of Thumb allocation
 if true
 
 
@@ -2281,7 +2281,7 @@ end
 
 %%% We assume correctly that immunity is temporary
 %%% We assume correctly that there is compliance to SIP order
-%%% But we used the ad hoc allocation
+%%% But we used the Rule of Thumb allocation
 if true
 
 
@@ -2442,7 +2442,7 @@ end
 
 %%% We assume correctly that immunity is temporary
 %%% We assume correctly that there is noncompliance to SIP order
-%%% But we used the ad hoc allocation
+%%% But we used the Rule of Thumb allocation
 if true
 
 
@@ -2639,7 +2639,7 @@ hline.LineStyle = ':';
 hline.HandleVisibility = 'off';
 title({'Permanent Immunity &','Noncompliance to Travel Restrictions','(B)'})
 
-      legend1=legend([p1 p3 p2 p4],{'Immunity','Travel Restrictions','Both','Ad Hoc'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
+      legend1=legend([p1 p3 p2 p4],{'Immunity','Travel Restrictions','Both','Rule of Thumb'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
 set(legend1,...
     'Position',[0.219215899371855 0.483039942998033 0.582857693944659 0.0352380951245623],...
     'Orientation','horizontal',...
@@ -2650,7 +2650,7 @@ set(legend1,...
 
 
    %'Position',[0.110197854559517 0.463039942998033 0.811608069283622 0.0352380951245623],...
-%sgtitle({'Cross: wrong about immunity length; Circle: wrong about SIP','Star: wrong about both; Triangle: Ad Hoc','Blue: Perm. and SIP is true','Green: Perm and no SIP is true','Red: Temporary and SIP is true','Black: Temporary and no SIP is true'})
+%sgtitle({'Cross: wrong about immunity length; Circle: wrong about SIP','Star: wrong about both; Triangle: Rule of Thumb','Blue: Perm. and SIP is true','Green: Perm and no SIP is true','Red: Temporary and SIP is true','Black: Temporary and no SIP is true'})
 
 
 
@@ -2690,7 +2690,7 @@ hline.HandleVisibility = 'off';
     xlabel(han, {'Percentage Change in Cumulative Damages'}, 'FontSize', 16);
     ylabel(han, {'Percentage Change in Expenditures'}, 'FontSize', 16); 
 
-%sgtitle({'Cross: wrong about immunity length; Circle: wrong about SIP','Star: wrong about both; Triangle: Ad Hoc','Blue: Perm. and SIP is true','Green: Perm and no SIP is true','Red: Temporary and SIP is true','Black: Temporary and no SIP is true'})
+%sgtitle({'Cross: wrong about immunity length; Circle: wrong about SIP','Star: wrong about both; Triangle: Rule of Thumb','Blue: Perm. and SIP is true','Green: Perm and no SIP is true','Red: Temporary and SIP is true','Black: Temporary and no SIP is true'})
 
 
 
