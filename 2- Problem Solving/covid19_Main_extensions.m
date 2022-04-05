@@ -1,9 +1,9 @@
 clear all; close all
 
 %Calling parameter values
-%[N1,N2,omega,beta11,beta22,beta12,beta21,sigma,gamma,phi1,phi2,qV,r,cV,cAdj,cI,w,params,R0] = covid_Parameters_months()
+[N1,N2,omega,beta11,beta22,beta12,beta21,sigma,gamma,phi1,phi2,qV,r,cV,cAdj,cI,w,params,R0] = covid_Parameters_months() % For main paper and global allocation
 %[N1,N2,omega,beta11,beta22,beta12,beta21,sigma,gamma,phi1,phi2,qV,r,cV,cAdj,cI,w,params,R0] = covid_Parameters_months_Death()
-[N1,N2,omega,beta11,beta22,beta12,beta21,sigma,gamma,phi1,phi2,qV,r,cV,cAdj,cI,w,params,R0] = covid_Parameters_months_Contact()
+%[N1,N2,omega,beta11,beta22,beta12,beta21,sigma,gamma,phi1,phi2,qV,r,cV,cAdj,cI,w,params,R0] = covid_Parameters_months_Contact()
 
 % Number of time periods
 T =4; %(in months)
@@ -12,7 +12,7 @@ T =4; %(in months)
 Nset= 60; 
  
 %Objective Function
-OBJ=2; %=1 Minimize damages & costs
+OBJ=2; %=1 Minimize damages & costs %=2 for global allocation
 
 %Initial conditions 
 %x0ic=  [0.9074*N1; 0.0103*N1; 0.0143*N1; 0.0667*N1; 0.8662*N2; 0.0138*N2; 0.0196*N2; 0.0986*N2; N1; N2; 0; 0]; %Main paper
@@ -20,18 +20,22 @@ OBJ=2; %=1 Minimize damages & costs
 %x0ic=  [0.9432*N1; 0.0064*N1; 0.0088*N1; 0.0408*N1; 0.8553*N2; 0.0153*N2; 0.0218*N2; 0.1056*N2; N1; N2; 0; 0]; %Varying because of contact rate with 0.64 and 0.66
 
 %x0ic=  [0.9663*N1; 0.0038*N1; 0.0052*N1; 0.0243*N1; 0.7864*N2; 0.0205*N2; 0.0303*N2; 0.1599*N2; N1; N2; 0; 0]; %Varying because of contact rate with 0.63 and 0.67
-x0ic=  [0.9803*N1; 0.0022*N1; 0.0029*N1; 0.0143*N1; 0.7055*N2; 0.0242*N2; 0.0377*N2; 0.2285*N2; N1; N2; 0; 0]; %Varying because of contact rate with 0.62 and 0.68
+%x0ic=  [0.9803*N1; 0.0022*N1; 0.0029*N1; 0.0143*N1; 0.7055*N2; 0.0242*N2; 0.0377*N2; 0.2285*N2; N1; N2; 0; 0]; %Varying because of contact rate with 0.62 and 0.68
 
+
+x0ic=  [0.9074*N1; 0.0103*N1; 0.0143*N1; 0.0667*N1; 0.9074*N2; 0.0103*N2; 0.0143*N2; 0.0667*N2; N1; N2; 0; 0]; %For global allocation
 
 %%%Key varying factors
 % The user needs to select which scenario
 %omega=0  ; ODE=1; %Permanent immunity, compliance to TR (PT)
-%omega=0  ; ODE=2; %Permanent immunity, no compliance to TR (PN)
-omega=1/6; ODE=1; %6-month immunity, compliance to TR (ST)
+omega=0  ; ODE=2; %Permanent immunity, no compliance to TR (PN)
+%omega=1/6; ODE=1; %6-month immunity, compliance to TR (ST)
 %omega=1/6; ODE=2; %6-month immunity, no compliance to TR (SN)
 
 %Maximum phyical constraint (does not account for potential scarcity) 
 MaxTreat=[0.1.*(N1+N2);N1+N2]; %constraint for uncontrolled R0 of 2.2 (it's 0.1091 in fact)
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -86,7 +90,7 @@ end
 
     %Initial guess to find unconstained amount
 GUESS=[]; % = empty : Initial guess is initial conditions
-OBJ=1;
+OBJ=2;
 CASE=3; %=3 Optimal Vaccine
 
 SCAR=0.1;
@@ -109,20 +113,38 @@ SCAR=0.1;
 R0_1=beta11./(gamma+phi1);
 R0_2=beta22./(gamma+phi2);
 
-figure
+set(0, 'DefaultLineLineWidth', 3);
+fig=figure
 subplot(411)
 plot(ts10,uV1s10); hold on
 plot(ts10,uV2s10); hold on
+title({'(A) Quantity of Vaccine'},'FontSize', 16)
 subplot(412)
 plot(ts10,V1s10); hold on
 plot(ts10,V2s10); hold on
+title({'(B) Fraction of Vaccinated Individuals'},'FontSize', 16)
 subplot(413)
 plot(ts10,I1s10); hold on
 plot(ts10,I2s10); hold on
+title({'(C) Fraction of Infected Individuals'},'FontSize', 16)
 subplot(414)
-plot(ts10,R0_1.*S1s10); hold on
-plot(ts10,R0_2.*S2s10); hold on
-plot([0 4],[1 1],'k');
+p1=plot(ts10,R0_1.*S1s10); hold on
+p2=plot(ts10,R0_2.*S2s10); hold on
+plot([0 4],[1 1],'k','LineWidth',0.5);
+title({'(D) Effective Reproduction Ratio'},'FontSize', 16)
+ legend1=legend([p1 p2],{'Country w/ Vaccines','Country w/o Vaccines'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
+set(legend1,...
+    'Position',[0.154711492322412 0.80432772884168 0.229598454066685 0.0621428569157918],...
+    'Orientation','vertical',...
+    'Interpreter','latex');
+    han=axes(fig,'visible','off'); 
+    han.Title.Visible='on';
+    han.XLabel.Visible='on';
+    han.YLabel.Visible='on';
+ %  ylabel(han,'Quantity of Treatment', 'FontSize', 16);
+    xlabel(han,{'Time (Months)'}, 'FontSize', 14);
+    %title(han,{'Attack Rate of Prawns on Supplemental Feed'}, 'FontSize', 14);
+ saveas(gcf,'Global Allocation_PermanentImmunity.png'); hold off    
 
 %saveas(gcf,'Contact_SmallDiff_TR_Perm.png'); hold off
 %saveas(gcf,'Death_TR_Perm.png'); hold off

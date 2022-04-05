@@ -34,7 +34,7 @@ end
 
 
 %Different Contact Rates across jurisdictions with Permanent Immunity
-if false
+if true
   
 bl=[0, 0.4470, 0.7410];
 re=[0.8500, 0.3250, 0.0980];
@@ -66,7 +66,7 @@ load WorkspacePT_Contact.mat
     xlim([0 ts(scarcePT_V10_Contact)])
     ylim([0 0.035])
     title({'(C)'})
-    legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Ad Hoc~~~','State 2: Optimal~~~','State 2: Ad Hoc'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
+    legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Rule of Thumb~~~','State 2: Optimal~~~','State 2: Rule of Thumb'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
 set(legend1,...
     'Position',[0.106626425988088 0.493992323950414 0.811608069283622 0.0352380951245623],...
     'Orientation','horizontal',...
@@ -111,7 +111,7 @@ end
 
 
 %Different Contact Rates across jurisdictions with Temporary Immunity
-if false
+if true
   
 bl=[0, 0.4470, 0.7410];
 re=[0.8500, 0.3250, 0.0980];
@@ -143,7 +143,7 @@ load WorkspaceST_Contact.mat
     xlim([0 ts(scarceST_V10_Contact)])
     ylim([0 0.035])
     title({'(C)'})
-    legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Ad Hoc~~~','State 2: Optimal~~~','State 2: Ad Hoc'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
+    legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Rule of Thumb~~~','State 2: Optimal~~~','State 2: Rule of Thumb'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
 set(legend1,...
     'Position',[0.106626425988088 0.493992323950414 0.811608069283622 0.0352380951245623],...
     'Orientation','horizontal',...
@@ -221,7 +221,7 @@ load WorkspacePT_Death.mat
     xlim([0 ts(scarcePT_V10_Death)])
     ylim([0 0.035])
     title({'(C)'})
-    legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Ad Hoc~~~','State 2: Optimal~~~','State 2: Ad Hoc'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
+    legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Rule of Thumb~~~','State 2: Optimal~~~','State 2: Rule of Thumb'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
 set(legend1,...
     'Position',[0.106626425988088 0.493992323950414 0.811608069283622 0.0352380951245623],...
     'Orientation','horizontal',...
@@ -298,7 +298,7 @@ load WorkspaceST_Death.mat
     xlim([0 ts(scarceST_V10_Death)])
     ylim([0 0.035])
     title({'(C)'})
-    legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Ad Hoc~~~','State 2: Optimal~~~','State 2: Ad Hoc'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
+    legend1=legend([p1 p3 p2 p4],{'State 1: Optimal~~~','State 1: Rule of Thumb~~~','State 2: Optimal~~~','State 2: Rule of Thumb'},'Interpreter','latex','Orientation','horizontal','Location','northeast');
 set(legend1,...
     'Position',[0.106626425988088 0.493992323950414 0.811608069283622 0.0352380951245623],...
     'Orientation','horizontal',...

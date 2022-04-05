@@ -99,10 +99,10 @@ end
 if OBJ==2
     
      %Policy adjustment cost 
-  adj= cAdj.*((N2./(N1+N2)).*uV1 - (N1./(N1+N2)).*uV2).^2 ;   
+  adj= 0 ;% cAdj.*((N2./(N1+N2)).*uV1 - (N1./(N1+N2)).*uV2).^2 ;   
   
 
-  objective = integrate(exp(-r.*t).*((phi1+w).*cI.*I1 + cV.*(uV1) + adj ));
+  objective = integrate(exp(-r.*t).*((phi1+w).*cI.*I1 + cV.*(uV1+uV2) + adj ));
     
     
 end
